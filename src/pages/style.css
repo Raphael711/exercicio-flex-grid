@@ -1,0 +1,167 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+img {
+  width: 180px;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #eeeddd;
+}
+
+.header,
+.footer {
+  background-color: #292929;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "mainContent sidebarContent";
+  padding: 20px;
+  flex: 1 0 auto;
+}
+
+div .section-title,
+.section-description {
+  text-align: center;
+}
+
+.navegacao div .navbtn {
+  padding: 6px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.navegacao div .navbtn:hover {
+  border-bottom: 2px solid black;
+}
+
+.section-title {
+  margin-top: 40px;
+}
+
+.mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  grid-area: "mainContent";
+}
+
+.categorycard {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  width: 280px;
+  height: 380px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.categorycard:hover {
+  border-color: gainsboro;
+}
+
+.maincardImage {
+  width: 100%;
+  display: block;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.sidebarContent {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  grid-area: "sidebarContent";
+}
+
+.sidebarContent > p {
+  margin-bottom: 15px;
+}
+
+.sidebarCard {
+  width: 75%;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.sidebarCard:hover {
+  border-color: gainsboro;
+}
+
+.sidebarCardImg {
+  display: block;
+  border-radius: 10px;
+  width: 220px;
+}
+
+.sidebarCardTitle {
+  text-align: center;
+}
+
+.footer-nav {
+  font-size: 20px;
+  padding: 6px;
+}
+
+@media (min-width: 1600px) {
+  * {
+    margin: auto;
+  }
+  .grid-container {
+    width: 1600px;
+    justify-content: center;
+  }
+  .sidebarCardImg {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  .grid-container {
+    grid-template-areas: "mainContent" "sidebarContent";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-nav {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 463px) {
+  .header,
+  .footer {
+    justify-content: center;
+  }
+}
